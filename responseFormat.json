@@ -1,0 +1,7 @@
+{
+    "id": "#uuid",
+    "name": "#string",
+    "email": "#string",
+    "createdAt": "#string",
+    "updatedAt": "#string"
+}
