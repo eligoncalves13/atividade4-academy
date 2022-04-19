@@ -3,7 +3,7 @@ Feature: Remover usuários
     Desejo remover um usuário
     Para que suas informações não estejam mais registradas
     
-    Background: Configurar base url
+    Background: Configuração url
         Given url baseUrl
         And path "users"
 
@@ -21,7 +21,7 @@ Feature: Remover usuários
         When method delete
         Then status 400
 
-    Scenario: Comportamento igual a remover usuário com sucesso mesmo identificador não localizado
+    Scenario: Comportamento igual a remover usuário com sucesso mesmo com identificador não localizado
         And path java.util.UUID.randomUUID()
         When method delete
         Then status 204
