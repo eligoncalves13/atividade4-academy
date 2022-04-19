@@ -25,7 +25,7 @@ Feature: Atualizar usuários
         When method put
         Then status 404
 
-    Scenario: Não deve ser possível atualizar usuários sem nome e email
+    Scenario: Não deve ser possível atualizar usuário sem nome e email
         #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
@@ -35,7 +35,7 @@ Feature: Atualizar usuários
         When method put
         Then status 400
 
-    Scenario: Não deve ser possível atualizar usuários sem nome
+    Scenario: Não deve ser possível atualizar usuário sem nome
         #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
@@ -45,7 +45,7 @@ Feature: Atualizar usuários
         When method put
         Then status 400
 
-    Scenario: Não deve ser possível criar usuários sem email
+    Scenario: Não deve ser possível atualizar usuário sem email
         #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
@@ -55,7 +55,7 @@ Feature: Atualizar usuários
         When method put
         Then status 400
 
-    Scenario: Não deve ser possível atualizar usuários com email inválido
+    Scenario: Não deve ser possível atualizar usuário com email inválido
         #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
@@ -77,7 +77,7 @@ Feature: Atualizar usuários
         Then status 422
         And match response contains { error: "E-mail already in use." }
        
-    Scenario: Não deve ser possível atualizar nome com mais de 100 caracteres
+    Scenario: Não deve ser possível atualizar usuário com nome com mais de 100 caracteres
         #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
@@ -87,7 +87,7 @@ Feature: Atualizar usuários
         When method put
         Then status 400
 
-    Scenario: Não deve ser possível atualizar email com mais de 60 caracteres
+    Scenario: Não deve ser possível atualizar usuário com email com mais de 60 caracteres
         #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
