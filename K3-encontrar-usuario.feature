@@ -9,7 +9,7 @@ Feature: Encontrar usuários
 
     Scenario: Encontrar usuário com sucesso 
         #Criar um usuário 
-        * def createUser = call read('K2-criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
        
         And path idUser

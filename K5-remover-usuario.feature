@@ -9,7 +9,7 @@ Feature: Remover usuários
 
     Scenario: Remover usuário com sucesso 
         #Criar um usuário 
-        * def createUser = call read('K1-criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
         
         And path idUser

@@ -10,7 +10,7 @@ Feature: Atualizar usuários
 
     Scenario: Atualizar usuário com sucesso 
         #Criar um usuário 
-        * def createUser = call read('criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
 
         And path idUser
@@ -27,7 +27,7 @@ Feature: Atualizar usuários
 
     Scenario: Não deve ser possível atualizar usuários sem nome e email
         #Criar um usuário 
-        * def createUser = call read('criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
 
         And path idUser        
@@ -37,7 +37,7 @@ Feature: Atualizar usuários
 
     Scenario: Não deve ser possível atualizar usuários sem nome
         #Criar um usuário 
-        * def createUser = call read('criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
 
         And path idUser 
@@ -47,7 +47,7 @@ Feature: Atualizar usuários
     
     Scenario: Não deve ser possível criar usuários sem email
         #Criar um usuário 
-        * def createUser = call read('criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
 
         And path idUser 
@@ -57,7 +57,7 @@ Feature: Atualizar usuários
 
     Scenario: Não deve ser possível atualizar usuários com email inválido
         #Criar um usuário 
-        * def createUser = call read('criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
 
         And path idUser 
@@ -68,7 +68,7 @@ Feature: Atualizar usuários
 
     Scenario: Não deve ser possível atualizar nome com mais de 100 caracteres
         #Criar um usuário 
-        * def createUser = call read('criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
 
         And path idUser 
@@ -78,7 +78,7 @@ Feature: Atualizar usuários
     
     Scenario: Não deve ser possível atualizar email com mais de 60 caracteres
         #Criar um usuário 
-        * def createUser = call read('criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
 
         And path idUser 

@@ -8,7 +8,6 @@ Feature: Criar usuários
         And path "users"
         * def payload = read('requestDefault.json')
 
-    @CriarUsuario
     Scenario: Criar usuário com sucesso
         And request payload
         When method post
@@ -37,7 +36,7 @@ Feature: Criar usuários
 
     Scenario: Não deve ser possível criar usuário com email já utilizado
         #Criar usuário 
-        * def createUser = call read('K2-criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
     
         And request {name: "Élida", email:"#(createUser.response.email)"}
         When method post

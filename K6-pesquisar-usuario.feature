@@ -8,7 +8,7 @@ Feature: Encontrar usuários
         And path "search"
 
         #Criar um usuário 
-        * def createUser = call read('K2-criar-usuario.feature@CriarUsuario')
+        * def createUser = call read('hook.feature@CriarUsuario')
         * def nameUser = createUser.response.name
         * def emailUser = createUser.response.email
        
