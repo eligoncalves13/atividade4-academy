@@ -41,7 +41,7 @@ Feature: Criar usuários
         And request {name: "Beatriz", email:"#(createUser.response.email)"}
         When method post
         Then status 422
-        And match response == { error: "User already exists." }
+        And match response contains { error: "User already exists." }
 
     Scenario: Não deve ser possível criar nome com mais de 100 caracteres
         And request { name: "Red Wacky League Antlez Broke the Stereo Neon Tide Bring Back Honesty Coalition Feedback Hand of Aces", email: "#('red' + java.util.UUID.randomUUID() + '@example.com')"}

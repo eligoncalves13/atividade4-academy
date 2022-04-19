@@ -8,7 +8,7 @@ Feature: Encontrar usuários
         And path "users"
 
     Scenario: Encontrar usuário com sucesso 
-        #Criar um usuário 
+        #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
        
@@ -17,7 +17,7 @@ Feature: Encontrar usuários
         Then status 200
         And match response contains read('responseDefault.json')
 
-    Scenario: Não deve ser possível encontrar usuário com identificador inválido
+    Scenario: Não deve ser possível encontrar usuário com identificador inexistente
         And path java.util.UUID.randomUUID()
         When method get
         Then status 404

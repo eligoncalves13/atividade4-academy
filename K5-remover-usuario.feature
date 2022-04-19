@@ -16,14 +16,16 @@ Feature: Remover usuários
         When method delete
         Then status 204
 
+    Scenario: Comportamento igual a remover usuário com sucesso mesmo com identificador inexistente
+        And path java.util.UUID.randomUUID()
+        When method delete
+        Then status 204
+
     Scenario: Não deve ser possível remover usuário com indenficador inválido
         And path "identificador-inválido"
         When method delete
         Then status 400
 
-    Scenario: Comportamento igual a remover usuário com sucesso mesmo com identificador não localizado
-        And path java.util.UUID.randomUUID()
-        When method delete
-        Then status 204
+    
 
     

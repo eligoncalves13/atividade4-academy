@@ -7,7 +7,7 @@ Feature: Encontrar usuários
         Given url baseUrl
         And path "search"
 
-        #Criar um usuário 
+        #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def nameUser = createUser.response.name
         * def emailUser = createUser.response.email
