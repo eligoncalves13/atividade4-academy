@@ -15,7 +15,7 @@ Feature: Encontrar usuários
         And path idUser
         When method get
         Then status 200
-        And match response == read('responseDefault.json')
+        And match response contains read('responseDefault.json')
 
     Scenario: Não deve ser possível encontrar usuário com identificador inválido
         And path java.util.UUID.randomUUID()

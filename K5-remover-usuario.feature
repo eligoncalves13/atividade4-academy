@@ -8,7 +8,7 @@ Feature: Remover usuários
         And path "users"
 
     Scenario: Remover usuário com sucesso 
-        #Criar um usuário 
+        #Criar usuário 
         * def createUser = call read('hook.feature@CriarUsuario')
         * def idUser = createUser.response.id
         
@@ -16,10 +16,14 @@ Feature: Remover usuários
         When method delete
         Then status 204
 
-    Scenario: Não deve ser possível deletar usuário com indenficador inválido
-        # And path java.util.UUID.randomUUID()
-        And path 1
+    Scenario: Não deve ser possível remover usuário com indenficador inválido
+        And path "identificador-inválido"
         When method delete
         Then status 400
+
+    Scenario: Comportamento igual a remover usuário com sucesso mesmo identificador não localizado
+        And path java.util.UUID.randomUUID()
+        When method delete
+        Then status 204
 
     

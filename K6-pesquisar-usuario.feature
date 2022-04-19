@@ -13,13 +13,15 @@ Feature: Encontrar usuários
         * def emailUser = createUser.response.email
        
     Scenario: Pesquisar usuário por nome
-        And params nameUser
+        And param value = nameUser
         When method get
         Then status 200
-        And match response == read('responseDefault.json')
-
+        And match response == "#array"
+        And match each response contains read('responseFormat.json')
+        
     Scenario: Pesquisar usuário por email
-        And params emailUser
+        And param value = emailUser
         When method get
         Then status 200
-        And match response == read('responseDefault.json')
+        And match response == "#array"
+        And match each response contains read('responseFormat.json')

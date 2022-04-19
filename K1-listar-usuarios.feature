@@ -10,8 +10,8 @@ Feature: Listar usuários
     Scenario: Listar usuários cadastrados
         When method get
         Then status 200
-        Then match response == "#array"
-        And match each response == read('responseFormat.json')
+        And match response == "#array"
+        And match each response contains read('responseFormat.json')
 
 
 
